@@ -1,0 +1,27 @@
+ {% extends 'authentication/index.html' %}
+ {%block title%}
+ Complete Registration First
+ {%endblock%}
+ {%block main%}
+
+   <div class="container mx-auto ">
+   <h1 class="mx-auto" style="margin-bottom:50px !important; margin-top:50px !important; margin-left:auto!important;"> Register Yourself to Post a Job / Apply for a Job </h1>
+   <form method="POST">
+   {% csrf_token %}
+   <div class="mb-3">
+    <select name="role" class="form-select" aria-label="Default select example">
+  
+  <option value="0">Employer</option>
+  <option value="1">Employee</option>
+</select>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Name/Company Name</label>
+  <input type="text" name="username" class="form-control" id="exampleFormControlInput1" placeholder="Shiksha.com">
+</div>
+<div class="mb-3">
+<button type="submit" class="btn btn-primary">Register</button>
+</div>
+   </form>
+   </div>
+ {%endblock%}

@@ -1,0 +1,38 @@
+{% extends 'employer/base.html' %}
+{%block title%}
+  Post a Job
+{%endblock%}
+
+{%block main%}
+ <h1>Post a Job</h1>
+   <div class="container mt-10">
+    <form class="row g-3 " method="POST">
+    {% csrf_token %}
+
+  <div class="mb-3">
+    <label for="inputPassword2" class="form-label">Job Title</label>
+    <input type="text" name="jobtitle" class="form-control" id="inputPassword2" placeholder="Enter Job Title">
+  </div>
+  <div>
+  <div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Job Description</label>
+  <textarea name="jobdescription" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Desctibe the Job"></textarea>
+</div>
+  <div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Qualification Required </label>
+  <textarea name="qualification" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter the Qualification's required seperated by commas"></textarea>
+</div>
+   <div class="mb-3">
+    <label for="inputPassword2" class="form-label">Salary Offered</label>
+    <input type="text" name="salary" class="form-control" id="inputPassword2" placeholder="Enter Salary Offered">
+  </div>
+   <div class="mb-3">
+    <label for="inputPassword2" class="form-label">Mode of work</label>
+    <input type="text" name="mode" class="form-control" id="inputPassword2" placeholder="Mode of work">
+  </div>
+    <button type="submit" class="btn btn-primary mb-3">Post Job</button>
+  </div>
+
+</form>
+   </div>
+{%endblock%}

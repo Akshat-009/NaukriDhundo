@@ -1,0 +1,21 @@
+{% extends 'authentication/index.html' %}
+
+{%block title%}
+Homepage
+{%endblock%}
+
+{%block main%}
+  <div class="container">
+ <h1> Search for a Job</h1>
+ <form method="GET"> 
+
+ <div class='mb-3'>
+ <input type="text" class="form control" name="query">
+ </div>
+ 
+     <div class="mb-3">
+ <button type="submit" class="btn btn-primary">Submit</button>
+     </div>
+ 
+ </div>
+{%endblock%}

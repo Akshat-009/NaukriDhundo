@@ -1,0 +1,28 @@
+ {% extends 'authentication/index.html' %}
+ {%block title%}
+ Verify Email
+ {%endblock%}
+
+ {%block main%}
+ <h1><span class="badge bg-primary ">Register Here</span></h1>
+ <form method="POST">
+  {% csrf_token %}
+  <div class="container my-10">
+  
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text"  name="email" class="form-control" id="inputPassword">
+  
+  </div>
+
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+
+
+ 
+    <div class="col-auto mt-10">
+    <button type="submit" class="btn btn-primary mb-3">Verify Email</button>
+
+  </div>
+  </div>
+  </form>
+ {%endblock%}

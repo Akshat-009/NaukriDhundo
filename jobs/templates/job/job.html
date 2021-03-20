@@ -1,0 +1,28 @@
+{% extends 'authentication/index.html' %}
+{%block title%}
+   Job Desc
+{%endblock%}
+
+
+{%block main%}
+<div class="container">
+<div class="card text-center">
+  <div class="card-header">
+    {{company}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{job.title}}</h5>
+    <p class="card-text">{{job.jobdescription}}</p>
+    <hr>
+    <p class="card-text">Qualifications req:</p>
+    <hr>
+    <ul>
+     <li>{{qualification.name}}</li>
+    </ul>
+    <a href="/jobs/apply/{{job.slug}}" class="btn btn-primary">Apply</a>
+  </div>
+
+</div>
+</div>
+
+{%endblock%}

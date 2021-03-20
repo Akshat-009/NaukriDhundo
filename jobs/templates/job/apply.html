@@ -1,0 +1,42 @@
+{% extends 'authentication/index.html' %}
+{%block title%}
+   Apply for Job
+{%endblock%}
+
+
+{%block main%}
+<div class="container">
+   <h1> Apply as {{job.title}} at {{company}}</h1>
+   <form  method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+     <div class="mb-3">
+     <label>Name</label>
+     <input type="text"  value="{{profile.name}}" disabled class="form-control"> 
+     </div>
+     
+     <div class="mb-3">
+     <label>Email Address </label>
+     <input type="text" value="{{request.user.username}}" disabled class="form-control"> 
+     </div>
+     <div class="mb-3">
+     <label>Past Experiences</label>
+     <input type="text" name="experiences" class="form-control"> 
+     </div>
+     <div class="mb-3">
+     <label>Resume</label>
+     <input type="file" name="resume" class="form-control"> 
+     </div>
+     <div class="mb-3">
+     <label>Expectations from the company</label>
+     <input type="text" name="expectations" class="form-control"> 
+     </div>
+     <div class="mb-3">
+     <label>Something about yourself </label>
+     <textarea type="text" name="cover"    class="form-control"> </textarea>
+     </div>
+     <div class="mb-3">
+ <button type="submit" class="btn btn-primary">Submit</button>
+     </div>
+   </form>
+</div>
+{%endblock%}

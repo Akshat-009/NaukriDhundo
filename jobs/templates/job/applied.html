@@ -1,0 +1,12 @@
+{% extends 'authentication/index.html' %}
+
+{%block title %}
+Applied
+{%endblock%}
+
+{%block main%}
+<div class="alert alert-success" role="alert">
+  {{message}}
+</div>
+<a href="{{applicant.resume.url}}" download>click to download resume </a>
+{%endblock%}

@@ -1,0 +1,44 @@
+{% extends 'authentication/index.html' %}
+
+{%block title%}
+Search Results
+{%endblock%}
+
+{%block main%}
+   <div class="container">
+
+   <div class="row">
+ {%for job in jobs%}
+<div class="col-4" onClick='getJobInfo("{{job.slug}}")'>
+ <h4> {{job.title}} </h4>
+ <h5> Job Description </h5>
+ <h5> {{job.description}}</h5>
+ <h5> Salary</h5>
+ <h5> {{job.salary}}</h5>
+</div>
+ {%endfor%}
+   </div>
+   <div class="col-8" id="job-info">
+
+
+   </div>
+   <nav aria-label="Page navigation example">
+  <ul class="pagination">
+      {% for page  in pagination %}
+    <li class="page-item"><a class="page-link" href="http://127.0.0.1:8000/dashboard/?query={{ query }}&page={{page}}">1</a></li>
+    {%endfor%}
+ 
+  </ul>
+</nav>
+   </div>
+   <script>
+   getJobInfo=(job_id)=>{
+       fetch(`/jobs/${job_id}`)
+       .then(response=> response.text());
+       .then(data=>{
+           document.getElementId("job-info").innerHTML=data;
+       })
+   }
+
+   </script>
+{%endblock%}

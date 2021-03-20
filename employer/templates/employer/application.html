@@ -1,0 +1,45 @@
+{% extends 'employer/base.html' %}
+{%block title%}
+   Applicant
+{%endblock%}
+
+
+{%block main%}
+<div class="container">
+   <h1> Applied as {{job.title}}</h1>
+   <form  method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+     <div class="mb-3">
+     <label>Name</label>
+     <input type="text"  value="{{profile.name}}" disabled class="form-control"> 
+     </div>
+     
+     <div class="mb-3">
+     <label>Email Address </label>
+     <input type="text" value="{{user.username}}" disabled class="form-control"> 
+     </div>
+     <div class="mb-3">
+     <label>Past Experiences</label>
+     <input type="text" value={{applicant.experiences}} disabled class="form-control"> 
+     </div>
+     <div class="mb-3">
+     <label>Resume</label>
+     <a href={{applicant.resume.url}} download > Click here to download the resume</a>
+     </div>
+     <div class="mb-3">
+     <label>Expectations from the company</label>
+     <input type="text" disabled value={{applicant.expectations}} class="form-control"> 
+     </div>
+     <div class="mb-3">
+     <label>Something about yourself </label>
+     <textarea type="text" value={{applicant.cover}} disabled class="form-control"> </textarea>
+     </div>
+     <div class="mb-3">
+ <button type="submit" class="btn btn-primary">Invite to Interview</button>
+ <button type="submit" class="btn btn-success">Hire!</button>
+ <button type="submit" class="btn btn-danger">Reject</button>
+     </div>
+   </form>
+</div>
+{%endblock%}
+  
