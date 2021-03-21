@@ -56,7 +56,8 @@ git clone https://github.com/Akshat-009/NaukriDhundo.git
  pip install -r requirements.txt
  python manage.py runserver
 ```
-
+Open the helpers.py 
+Enter your email and password in the required column for the email verification to work
 Start your Browser and go to 
 
 http://127.0.0.1:8000/auth/register
